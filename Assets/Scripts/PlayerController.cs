@@ -13,10 +13,19 @@ public class PlayerController : MonoBehaviour
     public List<BoxController> boxes;
     public List<KeyTile> keyTiles;
 
+    [SerializeField] private Sprite spriteDown;
+    [SerializeField] private Sprite spriteUp;
+    [SerializeField] private Sprite spriteLeft;
+    [SerializeField] private Sprite spriteRight;
+    private SpriteRenderer spriteRenderer;
+
+
     private bool isInEditorScene = false;
 
     private void Start()
     {
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+
         // Check if we're in the editor scene (where PlayerController is just a visual placeholder)
         isInEditorScene = SceneManager.GetActiveScene().name == "EditorScene";
 
@@ -53,13 +62,25 @@ public class PlayerController : MonoBehaviour
             Vector2Int inputDirection = Vector2Int.zero;
 
             if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                SetSprite(spriteUp);
                 inputDirection = Vector2Int.up;
+            }
             else if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                SetSprite(spriteDown);
                 inputDirection = Vector2Int.down;
+            }
             else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                SetSprite(spriteLeft);
                 inputDirection = Vector2Int.left;
+            }
             else if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                SetSprite(spriteRight);
                 inputDirection = Vector2Int.right;
+            }
 
             if (inputDirection != Vector2Int.zero)
             {
@@ -68,6 +89,11 @@ public class PlayerController : MonoBehaviour
                 moveCooldown = moveDelay;
             }
         }
+    }
+
+    private void SetSprite(Sprite directionalSprite)
+    {
+        spriteRenderer.sprite = directionalSprite;
     }
 
     private void TryMove(Vector2Int direction)

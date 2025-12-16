@@ -50,6 +50,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -74,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d420e0b2c5bd732429465a2d48e363bf, type: 3}
+  m_Sprite: {fileID: 504965002, guid: 8f45f34f2bd3b114f9eed642f46329ac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,3 +106,7 @@ MonoBehaviour:
   - {fileID: 0}
   keyTiles:
   - {fileID: 0}
+  spriteDown: {fileID: 504965002, guid: 8f45f34f2bd3b114f9eed642f46329ac, type: 3}
+  spriteUp: {fileID: -98619835, guid: 8f45f34f2bd3b114f9eed642f46329ac, type: 3}
+  spriteLeft: {fileID: 1633312323, guid: 8f45f34f2bd3b114f9eed642f46329ac, type: 3}
+  spriteRight: {fileID: 360625409, guid: 8f45f34f2bd3b114f9eed642f46329ac, type: 3}

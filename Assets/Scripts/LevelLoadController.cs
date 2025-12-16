@@ -108,8 +108,8 @@ public class LevelLoadController : MonoBehaviour
         if (pc != null)
         {
             pc.gridSystem = gridSystem;
-            pc.boxes = FindObjectsOfType<BoxController>().ToList();
-            pc.keyTiles = FindObjectsOfType<KeyTile>().ToList();
+            pc.boxes = FindObjectsByType<BoxController>(FindObjectsSortMode.None).ToList();
+            pc.keyTiles = FindObjectsByType<KeyTile>(FindObjectsSortMode.None).ToList();
         }
 
         levelObjects.Add(player);
